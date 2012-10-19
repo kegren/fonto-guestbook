@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="sv">
 <head>
 	<meta charset="UTF-8">
 	<title>Fonto</title>
@@ -15,9 +15,44 @@
 	<div class="fontoContainer">
 		<header>
 			<h1>{{ title }}</h1>
+			{% if success %}
+				<div class="alert alert-success">
+				{{ success }}
+				</div>
+			{% endif %}
 		</header>
 		<section>
-			<p>{{ text }}</p>
+			<form action="/" method="post">
+				<label for="user">Vad heter du?</label>
+				<input type="text" name="user" value="" id="user"  />
+				{% if error['user'] %}
+				<span class="help-block">{{ error['user'] }}</span>
+				{% endif %}
+				<label for="title">Titel</label>
+				<input type="text" name="title" value="" id="title"  />
+				{% if error['title'] %}
+				<span class="help-block">{{ error['title'] }}</span>
+				{% endif %}
+				<label for="post">Ditt inlägg</label>
+				<textarea name="post" cols="40" rows="6" id="post" class="span4" ></textarea>
+				{% if error['post'] %}
+				<span class="help-block">{{ error['post'] }}</span>
+				{% endif %}
+				<p><input type="submit" value="Skicka" class="btn" /></p>
+			</form>
+		</section>
+		<section>
+			{% if posts %}
+				{% for post in posts %}
+				<article class="post">
+					<h2 class="title">
+					{{ post.title|e }}
+					<span class="pull-right user">{{ post.user|e }}</span>
+					</h2>
+					<p>{{ post.post|convert_encoding('UTF-8', 'ISO-8859-1')|nl2br }}</p>
+				</article>
+				{% endfor %}
+			{% endif  %}
 		</section>
 	</div>
 </body>
