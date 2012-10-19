@@ -19,7 +19,7 @@
  		'host' => 'localhost',
  		'user' => 'root',
  		'pass' => '',
- 		'name' => '105992-skola'
+ 		'name' => 'fontomvc'
  	),
 
  	/**
