@@ -11,3 +11,16 @@
 .fontoContainer header {
 	border-bottom: 1px solid #ddd;
 }
+
+.title {
+	font-size: 16px;
+	color: #005b66;
+}
+
+.post {
+	width: 400px;
+}
+
+.user {
+	color: #02a5b8;
+}
