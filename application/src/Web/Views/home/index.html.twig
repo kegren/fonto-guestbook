@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Fonto</title>
-	<link rel="stylesheet" href="web/css/bootstrap.min.css">
-	<link rel="stylesheet" href="web/css/style.css">
+	<link rel="stylesheet" href="{{ baseUrl }}web/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ baseUrl }}web/css/style.css">
 
 	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -14,15 +14,15 @@
 <body>
 	<div class="fontoContainer">
 		<header>
-			<h1>{{ title }}</h1>
-			{% if success %}
+			<h1 class="headLine">{{ title }}</h1>
+			{% if success %}gi
 				<div class="alert alert-success">
 				{{ success }}
 				</div>
 			{% endif %}
 		</header>
 		<section>
-			<form action="/" method="post">
+			<form action="{{ baseUrl }}" method="post">
 				<label for="user">Vad heter du?</label>
 				<input type="text" name="user" value="" id="user"  />
 				{% if error['user'] %}
