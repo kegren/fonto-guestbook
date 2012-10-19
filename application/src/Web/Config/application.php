@@ -19,11 +19,11 @@
  		'host' => 'localhost',
  		'user' => 'root',
  		'pass' => '',
- 		'name' => 'fonto'
+ 		'name' => '105992-skola'
  	),
 
  	/**
  	 * Application environment, development enables error_reporting(-1)
  	 */
- 	'environment' => 'development',
+ 	'environment' => 'production',
  );
