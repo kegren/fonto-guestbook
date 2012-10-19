@@ -1,4 +1,7 @@
 <?php
+/**
+ * Post model
+ */
 
 namespace Web\Models;
 
@@ -7,20 +10,20 @@ use Fonto\Core\Model;
 class Post extends Model
 {
 
-	public function validation($user = '', $title = '', $post = '')
+	public function validation($data = array())
 	{
 		$error = array();
 		$valid = false;
 
-		if ($user == '' or strlen($user) < 2) {
-			$error['user'] = 'Du heter förmodligen något annat.';
+		if ($data['user'] == '' or strlen($data['user']) < 2) {
+			$error['user'] = 'Ditt namn måste bestå av minst 2 bokstäver.';
 		}
 
-		if ($title == '' or strlen($title) < 5) {
+		if ($data['title'] == '' or strlen($data['title']) < 5) {
 			$error['title'] = 'Titeln måste vara minst 5 bokstäver.';
 		}
 
-		if ($post == '' or strlen($post) < 7) {
+		if ($data['post'] == '' or strlen($data['post']) < 7) {
 			$error['post'] = 'Meddelandet måste vara minst 7 bokstäver långt.';
 		}
 
