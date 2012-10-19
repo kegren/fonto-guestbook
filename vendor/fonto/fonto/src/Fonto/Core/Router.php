@@ -15,7 +15,7 @@ use Fonto\Core\FontoException,
 class Router
 {
     const ACTION_PREFIX        = 'Action';
-    const CONTROLLER_NAMESPACE = 'Web\\Controllers';
+    const CONTROLLER_NAMESPACE = 'Web\Controllers';
     const DEFAULT_ROUTE        = '/';
     const ROUTE_DELIMITER      = '#';
     const DEFAULT_CONTROLLER   = 'home';
@@ -81,8 +81,8 @@ class Router
      */
     public function run()
     {
-        $class = self::CONTROLLER_NAMESPACE . DS . $this->controller();
-        $file  = CONTROLLERPATH . $this->controller() . EXT;
+        $class = self::CONTROLLER_NAMESPACE . DS . ucfirst($this->controller());
+        $file  = CONTROLLERPATH . ucfirst($this->controller()) . EXT;
 
         if (!file_exists($file) or (!is_readable($file))) {
             throw new FontoException("The file $file was not found");
