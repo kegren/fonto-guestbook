@@ -1,0 +1,10 @@
+{
+	"name": "kenren/Fonto",
+    "require": {
+        "php-activerecord/php-activerecord": "dev-master",
+        "twig/twig": "1.*"
+    },
+    "autoload": {
+    	"psr-0": {"Fonto": "vendor/fonto/fonto/src/"}
+    }
+}
