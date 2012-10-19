@@ -5,6 +5,10 @@
  * Creates a new application
  */
 
+if (!isset($_SESSION)) {
+	session_start();
+}
+
 
 /**
  * Include files
