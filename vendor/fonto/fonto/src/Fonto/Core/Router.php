@@ -4,7 +4,7 @@
  *
  * @author Kenny Damgren <kenny.damgren@gmail.com>
  * @package Fonto
- * @link https://github.com/kenren/Fonto
+ * @link https://github.com/kenren/fonto
  */
 
 namespace Fonto\Core;
@@ -81,7 +81,7 @@ class Router
      */
     public function run()
     {
-        $class = self::CONTROLLER_NAMESPACE . DS . ucfirst($this->controller());
+        $class = self::CONTROLLER_NAMESPACE . '\\' . ucfirst($this->controller());
         $file  = CONTROLLERPATH . ucfirst($this->controller()) . EXT;
 
         if (!file_exists($file) or (!is_readable($file))) {
