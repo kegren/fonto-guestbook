@@ -44,3 +44,17 @@ if (!function_exists('_ed')) {
 		die;
 	}
 }
+
+/**
+ * Simple redirect function
+ *
+ * @access public
+ * @param  string
+ */
+if (!function_exists('redirect')) {
+	function redirect($uri) {
+		header("Location: $uri");
+		exit;
+	}
+
+}
