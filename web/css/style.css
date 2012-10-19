@@ -12,6 +12,10 @@
 	border-bottom: 1px solid #ddd;
 }
 
+.fontoContainer section {
+	margin-top: 10px;
+}
+
 .title {
 	font-size: 16px;
 	color: #005b66;
@@ -23,4 +27,9 @@
 
 .user {
 	color: #02a5b8;
+}
+
+.headLine {
+	font-size: 24px;
+	color: #796a06;
 }
