@@ -6,6 +6,7 @@
 namespace Web\Controllers;
 
 use Fonto\Core\Controller,
+	Fonto\Core\Url,
 	Web\Models\Post;
 
 class Home extends Controller
@@ -13,10 +14,12 @@ class Home extends Controller
 	public function indexAction()
 	{
 		$posts = new Post();
+		$url   = new Url();
 
 		$data = array(
-			'title' => 'En gästbok..',
-			'posts' => $posts->getAll()
+			'title' => 'En gästbok skapad med Fonto',
+			'posts' => $posts->getAll(),
+			'baseUrl' => $url->baseUrl()
 		);
 
 		if ($_POST) {
@@ -31,7 +34,7 @@ class Home extends Controller
 			if ($validate === true) {
 				// $data['success'] = 'Ditt inlägg är skapat!';
 				$posts->insert($insert);
-				redirect('/');
+				redirect($url->baseUrl());
 			} else {
 				$data['error'] = $validate;
 			}
