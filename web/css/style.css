@@ -23,10 +23,12 @@
 
 .post {
 	width: 400px;
+	border-bottom: 1px solid #ddd;
 }
 
 .user {
-	color: #02a5b8;
+	font-size: 12px;
+	color: #a3a3a3;
 }
 
 .headLine {
