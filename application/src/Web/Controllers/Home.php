@@ -17,8 +17,8 @@ class Home extends Controller
 		$url   = new Url();
 
 		$data = array(
-			'title' => 'En gästbok skapad med Fonto',
-			'posts' => $posts->getAll(),
+			'title'   => 'En gästbok skapad med Fonto',
+			'posts'   => $posts->getAll(),
 			'baseUrl' => $url->baseUrl()
 		);
 
@@ -37,7 +37,7 @@ class Home extends Controller
 				redirect($url->baseUrl());
 			} else {
 				$data['error'] = $validate;
-				$data['post'] = $_POST;
+				$data['post']  = $_POST;
 			}
 		}
 
