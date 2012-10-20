@@ -22,7 +22,7 @@ class Home extends Controller
 			'baseUrl' => $url->baseUrl()
 		);
 
-		if ($_POST) {
+		if (isset($_POST['submit'])) {
 			$insert = array(
 				'title' => $_POST['title'],
 				'user'  => $_POST['user'],
