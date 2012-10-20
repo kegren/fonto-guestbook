@@ -37,7 +37,7 @@ class Post extends Model
 
 	public function getAll()
 	{
-		return Post::find('all');
+		return Post::find('all', array('order' => 'date desc'));
 	}
 
 	public function insert($data = array())
