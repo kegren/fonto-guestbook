@@ -5,7 +5,7 @@
 	<title>Fonto</title>
 
     <meta name="keywords" content="fonto">
-    <meta name="description" content="A small guestbook built with Fonto">
+    <meta name="description" content="En liten gästbok byggd med Fonto">
     <meta name="author" content="Kenny Damgren">
 
 	<link rel="stylesheet" href="{{ baseUrl }}web/css/bootstrap.min.css">
@@ -29,17 +29,17 @@
 		<section>
 			<form action="{{ baseUrl }}" method="post">
 				<label for="user">Vad heter du?</label>
-				<input type="text" name="user" value="" id="user"  />
+				<input type="text" name="user" id="user" value="{{ post['user']|e }}"/>
 				{% if error['user'] %}
 				<span class="help-block error">{{ error['user'] }}</span>
 				{% endif %}
 				<label for="title">Titel</label>
-				<input type="text" name="title" value="" id="title"  />
+				<input type="text" name="title" id="title"  value="{{ post['title']|e }}"/>
 				{% if error['title'] %}
 				<span class="help-block error">{{ error['title'] }}</span>
 				{% endif %}
 				<label for="post">Ditt inlägg</label>
-				<textarea name="post" cols="40" rows="6" id="post" class="span4" ></textarea>
+				<textarea name="post" cols="40" rows="6" id="post" class="span4" >{{ post['post'] }}</textarea>
 				{% if error['post'] %}
 				<span class="help-block error">{{ error['post'] }}</span>
 				{% endif %}
@@ -54,7 +54,7 @@
 					{{ post.title|e }}
 					<span class="pull-right user">{{ post.user|e }}</span>
 					</h2>
-					<p>{{ post.post|convert_encoding('UTF-8', 'ISO-8859-1')|nl2br }}</p>
+					<p>{{ post.post|e|nl2br }}</p>
 				</article>
 				{% endfor %}
 			{% endif  %}
