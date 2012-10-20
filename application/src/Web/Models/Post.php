@@ -9,7 +9,12 @@ use Fonto\Core\Model;
 
 class Post extends Model
 {
-
+	/**
+	 * Validates data from the form
+	 *
+	 * @param  $data Containing post data
+	 * @return mixed True if there is no error otherwise returning the error array
+	 */
 	public function validation($data = array())
 	{
 		$error = array();
@@ -34,12 +39,22 @@ class Post extends Model
 		return $error;
 	}
 
-
+	/**
+	 * Gets all posts and return an object
+	 *
+	 * @return object
+	 */
 	public function getAll()
 	{
 		return Post::find('all', array('order' => 'date desc'));
 	}
 
+	/**
+	 * Inserts a record
+	 *
+	 * @param  $data
+	 * @return Boolean True if the insert succeeded false otherwise
+	 */
 	public function insert($data = array())
 	{
 		Post::create($data);
