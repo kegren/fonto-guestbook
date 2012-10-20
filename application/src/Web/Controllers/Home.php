@@ -37,6 +37,7 @@ class Home extends Controller
 				redirect($url->baseUrl());
 			} else {
 				$data['error'] = $validate;
+				$data['post'] = $_POST;
 			}
 		}
 
